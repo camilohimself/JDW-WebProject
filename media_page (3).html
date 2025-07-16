@@ -1,0 +1,2936 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média - Jean-David Waeber</title>
+    <meta name="description" content="Découvrez l'univers multimedia de Jean-David Waeber : enregistrements, vidéos, articles de presse et présence sur les réseaux sociaux.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* === ARCHITECTURE CSS COMPLÈTE === */
+        
+        /* 00-variables.css - REFINED LUXURY PALETTE */
+        :root {
+            /* === COULEURS PRINCIPALES SOPHISTIQUÉES === */
+            --primary-dark: #0a0a0b;
+            --primary-light: #151518;
+            --secondary-light: #1f1f23;
+            --accent-primary: #2a2a2f;
+            --accent-subtle: #3a3a41;
+            
+            /* === PALETTE OR RAFFINÉE === */
+            --accent-gold: #d4af37;
+            --accent-gold-light: #e6c757;
+            --accent-gold-dark: #b8941f;
+            --accent-gold-muted: #8b7355;
+            --accent-gold-subtle: rgba(212, 175, 55, 0.08);
+            
+            /* === ACCENTS MODERNES === */
+            --accent-platinum: #e5e4e2;
+            --accent-silver: #c0c0c0;
+            --accent-copper: #b87333;
+            --accent-warm: #faf8f5;
+            
+            /* === TEXTE HIÉRARCHIE SOPHISTIQUÉE === */
+            --text-primary: #fafafa;
+            --text-secondary: #e8e8e8;
+            --text-muted: #a8a8a8;
+            --text-subtle: #888888;
+            --text-accent: var(--accent-gold);
+            --text-luxury: var(--accent-platinum);
+            
+            /* === ARRIÈRE-PLANS PREMIUM === */
+            --bg-section: #080809;
+            --bg-card: #131316;
+            --bg-card-elevated: #181820;
+            --bg-overlay: rgba(10, 10, 11, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --bg-glass-strong: rgba(255, 255, 255, 0.08);
+            
+            /* === BORDURES RAFFINÉES === */
+            --border-subtle: #202026;
+            --border-light: #2a2a30;
+            --border-accent: #3a3a42;
+            --border-luxury: rgba(212, 175, 55, 0.15);
+            
+            /* === TYPOGRAPHIE PREMIUM === */
+            --font-serif: 'Playfair Display', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-accent: 'Crimson Text', Georgia, serif;
+            --font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            
+            /* === ÉCHELLE TYPOGRAPHIQUE HARMONIQUE === */
+            --text-xs: 0.8rem;        /* 12.8px */
+            --text-sm: 0.9rem;        /* 14.4px */
+            --text-base: 1rem;        /* 16px */
+            --text-lg: 1.125rem;      /* 18px */
+            --text-xl: 1.3rem;        /* 20.8px */
+            --text-2xl: 1.625rem;     /* 26px */
+            --text-3xl: 2.1rem;       /* 33.6px */
+            --text-4xl: 2.7rem;       /* 43.2px */
+            --text-5xl: 3.5rem;       /* 56px */
+            --text-6xl: 4.5rem;       /* 72px */
+            
+            /* === ESPACEMENTS HARMONIQUES === */
+            --space-xs: 6px;
+            --space-sm: 12px;
+            --space-md: 20px;
+            --space-lg: 32px;
+            --space-xl: 52px;
+            --space-2xl: 84px;
+            --space-3xl: 136px;
+            
+            /* === ICÔNES PROPORTIONNÉES === */
+            --icon-xs: 14px;
+            --icon-sm: 18px;
+            --icon-md: 24px;
+            --icon-lg: 32px;
+            --icon-xl: 48px;
+            
+            /* === HAUTEURS DE LIGNE OPTIMISÉES === */
+            --leading-none: 0.95;
+            --leading-tight: 1.15;
+            --leading-snug: 1.3;
+            --leading-normal: 1.45;
+            --leading-relaxed: 1.6;
+            --leading-loose: 1.8;
+            
+            /* === TRACKING RAFFINÉ === */
+            --tracking-tighter: -0.04em;
+            --tracking-tight: -0.02em;
+            --tracking-normal: 0em;
+            --tracking-wide: 0.02em;
+            --tracking-wider: 0.04em;
+            --tracking-widest: 0.08em;
+            
+            /* === OMBRES SOPHISTIQUÉES === */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.15);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.4);
+            --shadow-luxury: 0 8px 32px rgba(212, 175, 55, 0.15);
+            --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+            
+            /* === TRANSITIONS NATURELLES === */
+            --transition-micro: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --transition-elastic: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            /* === RAYONS HARMONIQUES === */
+            --radius-xs: 4px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+            
+            /* === GLASSMORPHISM === */
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-blur: blur(12px);
+            --glass-strong-bg: rgba(255, 255, 255, 0.08);
+            --glass-strong-border: rgba(255, 255, 255, 0.15);
+            
+            /* === Z-INDEX HIERARCHY === */
+            --z-dropdown: 1000;
+            --z-modal: 1010;
+            --z-popover: 1020;
+            --z-tooltip: 1030;
+            --z-toast: 1040;
+        }
+        }
+
+        /* 01-reset.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: 
+                radial-gradient(ellipse at top, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-section) 100%);
+            color: var(--text-primary);
+            line-height: var(--leading-normal);
+            overflow-x: hidden;
+            font-size: var(--text-base);
+            letter-spacing: var(--tracking-normal);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+        }
+
+        /* 02-components.css */
+        
+        /* === NAVIGATION LUXURY === */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            z-index: var(--z-dropdown);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, var(--accent-gold-subtle), transparent);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            background: var(--glass-strong-bg);
+            box-shadow: var(--shadow-luxury);
+            border-bottom-color: var(--border-luxury);
+        }
+
+        .navbar.scrolled::before {
+            opacity: 1;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--space-xl);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-luxury);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            letter-spacing: var(--tracking-tight);
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover {
+            color: var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xl);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: var(--space-sm) var(--space-md);
+            font-size: var(--text-sm);
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            border-radius: var(--radius-lg);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--glass-bg);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .nav-menu a:hover::before {
+            opacity: 1;
+            border-color: var(--border-luxury);
+        }
+
+        .nav-menu a.active::before {
+            opacity: 1;
+            background: var(--accent-gold-subtle);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .nav-menu a.active,
+        .nav-menu a:hover {
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .nav-menu a.active {
+            color: var(--accent-gold);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: var(--text-lg);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+
+        /* === CARDS LUXURY SYSTEM === */
+        .card {
+            background: var(--bg-card-elevated);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-luxury);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: var(--glass-blur);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--glass-bg) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-luxury);
+            border-color: var(--accent-gold);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            padding: var(--space-xl);
+            border-bottom: 1px solid var(--border-luxury);
+            background: var(--accent-gold-subtle);
+        }
+
+        .card-body {
+            padding: var(--space-xl);
+        }
+
+        .card-footer {
+            padding: var(--space-xl);
+            border-top: 1px solid var(--border-luxury);
+            background: var(--glass-bg);
+        }
+
+        .card-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--text-luxury);
+            margin-bottom: var(--space-md);
+            line-height: var(--leading-tight);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .card-subtitle {
+            color: var(--accent-gold);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-widest);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .card-subtitle::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--accent-gold);
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            font-size: var(--text-base);
+        }
+
+        /* === BUTTONS LUXURY SYSTEM === */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-base);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            backdrop-filter: var(--glass-blur);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: var(--transition-smooth);
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            color: var(--primary-dark);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            backdrop-filter: var(--glass-blur);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .btn-ghost {
+            background: var(--glass-bg);
+            color: var(--text-secondary);
+            border-color: var(--border-luxury);
+            backdrop-filter: var(--glass-blur);
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-gold);
+            background: var(--glass-strong-bg);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        } inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-sm);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 4px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border-color: var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border-color: var(--border-light);
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* === HERO SYSTEM === */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-2xl) 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23c9a96e;stop-opacity:0.08"/><stop offset="100%" style="stop-color:%23c9a96e;stop-opacity:0.02"/></linearGradient></defs><path d="M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z" fill="url(%23grad1)"/></svg>') center/cover;
+            animation: heroFloat 25s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.01); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            z-index: 2;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            color: var(--accent-gold);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            line-height: var(--leading-tight);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .hero-description {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xl);
+            line-height: var(--leading-relaxed);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 03-layout.css */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .section {
+            padding: var(--space-2xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            line-height: var(--leading-tight);
+        }
+
+        .section-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: var(--leading-relaxed);
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-auto {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        /* 04-utilities.css */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        .mb-xl { margin-bottom: var(--space-xl); }
+
+        .mt-sm { margin-top: var(--space-sm); }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+        .mt-xl { margin-top: var(--space-xl); }
+
+        .p-sm { padding: var(--space-sm); }
+        .p-md { padding: var(--space-md); }
+        .p-lg { padding: var(--space-lg); }
+        .p-xl { padding: var(--space-xl); }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === MÉDIA SPECIFIC STYLES === */
+        
+        /* Audio Player Premium */
+        .audio-player {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--secondary-light) 100%);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .audio-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .audio-player.playing::before {
+            transform: scaleX(1);
+        }
+
+        .audio-header {
+            padding: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .audio-artwork {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audio-artwork img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .audio-artwork::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .audio-player.playing .audio-artwork::after {
+            opacity: 1;
+        }
+
+        .audio-info {
+            flex: 1;
+        }
+
+        .audio-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .audio-meta {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .audio-controls {
+            padding: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .play-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-lg);
+        }
+
+        .play-btn:hover {
+            background: var(--accent-gold-light);
+            transform: scale(1.05);
+        }
+
+        .progress-container {
+            flex: 1;
+            height: 6px;
+            background: var(--border-subtle);
+            border-radius: var(--radius-full);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+            border-radius: var(--radius-full);
+            width: 0%;
+            transition: width 0.1s linear;
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--accent-gold);
+            border-radius: var(--radius-full);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .progress-container:hover .progress-bar::after {
+            opacity: 1;
+        }
+
+        .time-display {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            min-width: 40px;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: var(--border-subtle);
+            border-radius: var(--radius-full);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .volume-level {
+            height: 100%;
+            background: var(--accent-gold);
+            border-radius: var(--radius-full);
+            width: 70%;
+        }
+
+        /* Waveform Visualization */
+        .waveform {
+            height: 60px;
+            background: var(--bg-section);
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waveform-bars {
+            display: flex;
+            align-items: end;
+            height: 100%;
+            gap: 2px;
+            padding: var(--space-xs);
+        }
+
+        .waveform-bar {
+            flex: 1;
+            background: var(--border-subtle);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+            min-height: 4px;
+            animation: waveMotion 2s ease-in-out infinite;
+        }
+
+        .waveform-bar:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+
+        .waveform-bar:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+
+        .audio-player.playing .waveform-bar {
+            background: var(--accent-gold);
+        }
+
+        @keyframes waveMotion {
+            0%, 100% { height: 20%; }
+            50% { height: 80%; }
+        }
+
+        /* Playlist */
+        .playlist {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+        }
+
+        .playlist-header {
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(201, 169, 110, 0.05);
+        }
+
+        .playlist-item {
+            padding: var(--space-md) var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .playlist-item:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .playlist-item.active {
+            background: rgba(201, 169, 110, 0.1);
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .playlist-number {
+            width: 24px;
+            text-align: center;
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+        }
+
+        .playlist-info {
+            flex: 1;
+        }
+
+        .playlist-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .playlist-composer {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+
+        .playlist-duration {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Video Player */
+        .video-player {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            background: var(--primary-dark);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: var(--primary-dark);
+        }
+
+        .video-container video,
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(201, 169, 110, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .video-player:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 169, 110, 0.9);
+            border: none;
+            border-radius: var(--radius-full);
+            color: var(--primary-dark);
+            font-size: var(--text-2xl);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.1);
+            background: var(--accent-gold);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: var(--border-subtle);
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        /* Social Media Feed */
+        .social-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .social-post {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            break-inside: avoid;
+            margin-bottom: var(--space-md);
+        }
+
+        .social-post:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-gold);
+        }
+
+        .social-header {
+            padding: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .social-platform {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-lg);
+        }
+
+        .social-platform.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-platform.linkedin {
+            background: #0077b5;
+        }
+
+        .social-platform.twitter {
+            background: #1da1f2;
+        }
+
+        .social-platform.youtube {
+            background: #ff0000;
+        }
+
+        .social-meta {
+            flex: 1;
+        }
+
+        .social-author {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: var(--text-sm);
+        }
+
+        .social-date {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+
+        .social-content {
+            padding: var(--space-md);
+        }
+
+        .social-text {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-sm);
+        }
+
+        .social-image {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin-top: var(--space-sm);
+        }
+
+        .social-stats {
+            padding: var(--space-md);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+
+        .social-stat {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Press Articles */
+        .press-article {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .press-article:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .press-article::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-gold);
+            transform: scaleY(0);
+            transition: var(--transition-smooth);
+        }
+
+        .press-article:hover::before {
+            transform: scaleY(1);
+        }
+
+        .press-header {
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .press-publication {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .press-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-md);
+            background: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: var(--text-xs);
+        }
+
+        .press-meta {
+            flex: 1;
+        }
+
+        .press-source {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: var(--text-sm);
+        }
+
+        .press-date {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+
+        .press-category {
+            background: rgba(201, 169, 110, 0.2);
+            color: var(--accent-gold);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+        }
+
+        .press-content {
+            padding: var(--space-lg);
+        }
+
+        .press-headline {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+            line-height: var(--leading-snug);
+        }
+
+        .press-excerpt {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-md);
+        }
+
+        .press-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: var(--transition-smooth);
+        }
+
+        .press-link:hover {
+            color: var(--accent-gold-light);
+            transform: translateX(4px);
+        }
+
+        /* Featured Content */
+        .featured-content {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--secondary-light) 100%);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--accent-gold);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            z-index: 2;
+        }
+
+        /* Media Filters */
+        .media-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+            padding: var(--space-sm);
+            background: var(--bg-card);
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-subtle);
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filter-btn {
+            padding: var(--space-xs) var(--space-md);
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-full);
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .filter-btn:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--accent-gold);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+
+        /* Animated Counter */
+        .stats-counter {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: var(--space-xs);
+            line-height: var(--leading-none);
+        }
+
+        .stat-label {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+        }
+
+        /* Loading States */
+        .loading-skeleton {
+            background: linear-gradient(90deg, var(--border-subtle) 25%, var(--border-light) 50%, var(--border-subtle) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: var(--radius-md);
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .skeleton-text {
+            height: 16px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .skeleton-text.short {
+            width: 60%;
+        }
+
+        .skeleton-text.medium {
+            width: 80%;
+        }
+
+        /* Share Buttons */
+        .share-buttons {
+            display: flex;
+            gap: var(--space-xs);
+            margin-top: var(--space-md);
+        }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-card);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-size: var(--text-sm);
+        }
+
+        .share-btn:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-card);
+                flex-direction: column;
+                gap: 0;
+                box-shadow: var(--shadow-lg);
+                border-top: 1px solid var(--border-subtle);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu a {
+                padding: var(--space-md) var(--space-lg);
+                border-bottom: 1px solid var(--border-subtle);
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: var(--text-3xl);
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 var(--space-md);
+            }
+
+            .audio-controls {
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+
+            .volume-control {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-feed {
+                grid-template-columns: 1fr;
+            }
+
+            .media-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: var(--space-sm);
+            }
+
+            .filter-btn {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .stats-counter {
+                flex-wrap: wrap;
+                gap: var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .audio-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .audio-artwork {
+                width: 120px;
+                height: 120px;
+            }
+
+            .press-article {
+                margin-bottom: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body data-page="media">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Jean-David Waeber</a>
+            <ul class="nav-menu">
+                <li><a href="#" data-page="accueil">Accueil</a></li>
+                <li><a href="#" data-page="biographie">Biographie</a></li>
+                <li><a href="#" data-page="repertoire">Répertoire</a></li>
+                <li><a href="#" data-page="ensembles">Ensembles</a></li>
+                <li><a href="#" data-page="reflexions">Réflexions</a></li>
+                <li><a href="#" data-page="agenda">Agenda</a></li>
+                <li><a href="#" data-page="galerie">Galerie</a></li>
+                <li><a href="#" data-page="media" class="active">Média</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Univers Multimédia</p>
+            <h1 class="hero-title">Média</h1>
+            <p class="hero-description">
+                Plongez dans l'univers sonore et visuel de Jean-David Waeber. 
+                Découvrez ses enregistrements, performances vidéo, articles de presse 
+                et suivez son actualité sur les réseaux sociaux.
+            </p>
+            
+            <!-- Stats Counter -->
+            <div class="stats-counter fade-in">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Enregistrements</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="45">0</div>
+                    <div class="stat-label">Vidéos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="87">0</div>
+                    <div class="stat-label">Articles Presse</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">K Followers</div>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-xl);">
+                <a href="#audio" class="btn btn-primary">
+                    <i class="fas fa-play"></i>
+                    Écouter
+                </a>
+                <a href="#videos" class="btn btn-secondary">
+                    <i class="fas fa-video"></i>
+                    Regarder
+                </a>
+                <a href="#press" class="btn btn-ghost">
+                    <i class="fas fa-newspaper"></i>
+                    Presse
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="section">
+        <div class="container">
+            <div class="featured-content fade-in">
+                <div class="featured-badge">
+                    <i class="fas fa-star"></i>
+                    À la Une
+                </div>
+                <div class="grid grid-2">
+                    <div class="p-xl">
+                        <div class="card-subtitle">Nouvel Album</div>
+                        <h3 class="card-title" style="font-size: var(--text-2xl); margin-bottom: var(--space-md);">
+                            "Virtuoso Moderne"
+                        </h3>
+                        <p class="card-description mb-lg">
+                            Découvrez le dernier enregistrement de Jean-David Waeber, 
+                            une exploration audacieuse du répertoire contemporain pour violon solo. 
+                            Un voyage musical qui repousse les frontières de l'expression artistique.
+                        </p>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn" title="Partager sur Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="share-btn" title="Partager sur Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="share-btn" title="Partager sur LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="share-btn" title="Copier le lien">
+                                <i class="fas fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="audio-player playing">
+                        <div class="audio-header">
+                            <div class="audio-artwork">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Album Virtuoso Moderne">
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">Caprice No. 24 - Paganini</div>
+                                <div class="audio-meta">
+                                    <span><i class="fas fa-clock"></i> 4:32</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Studio Lausanne</span>
+                                    <span><i class="fas fa-calendar"></i> 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="waveform">
+                            <div class="waveform-bars">
+                                <div class="waveform-bar" style="height: 30%;"></div>
+                                <div class="waveform-bar" style="height: 60%;"></div>
+                                <div class="waveform-bar" style="height: 40%;"></div>
+                                <div class="waveform-bar" style="height: 80%;"></div>
+                                <div class="waveform-bar" style="height: 20%;"></div>
+                                <div class="waveform-bar" style="height: 70%;"></div>
+                                <div class="waveform-bar" style="height: 50%;"></div>
+                                <div class="waveform-bar" style="height: 90%;"></div>
+                                <div class="waveform-bar" style="height: 35%;"></div>
+                                <div class="waveform-bar" style="height: 65%;"></div>
+                                <div class="waveform-bar" style="height: 45%;"></div>
+                                <div class="waveform-bar" style="height: 75%;"></div>
+                                <div class="waveform-bar" style="height: 25%;"></div>
+                                <div class="waveform-bar" style="height: 85%;"></div>
+                                <div class="waveform-bar" style="height: 55%;"></div>
+                                <div class="waveform-bar" style="height: 40%;"></div>
+                                <div class="waveform-bar" style="height: 70%;"></div>
+                                <div class="waveform-bar" style="height: 30%;"></div>
+                                <div class="waveform-bar" style="height: 60%;"></div>
+                                <div class="waveform-bar" style="height: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" id="main-play-btn">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <div class="time-display">1:43</div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 38%;"></div>
+                            </div>
+                            <div class="time-display">4:32</div>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up" style="color: var(--text-muted); font-size: var(--text-sm);"></i>
+                                <div class="volume-slider">
+                                    <div class="volume-level"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Filters -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explorez par Catégorie</h2>
+                <p class="section-subtitle">
+                    Naviguez à travers les différents contenus multimédias
+                </p>
+            </div>
+
+            <div class="media-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i>
+                    Tout
+                </button>
+                <button class="filter-btn" data-filter="audio">
+                    <i class="fas fa-music"></i>
+                    Audio
+                </button>
+                <button class="filter-btn" data-filter="video">
+                    <i class="fas fa-video"></i>
+                    Vidéo
+                </button>
+                <button class="filter-btn" data-filter="press">
+                    <i class="fas fa-newspaper"></i>
+                    Presse
+                </button>
+                <button class="filter-btn" data-filter="social">
+                    <i class="fas fa-share-alt"></i>
+                    Social
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audio" class="section" data-category="audio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enregistrements Audio</h2>
+                <p class="section-subtitle">
+                    Une sélection d'enregistrements studio et live, témoins de l'excellence artistique
+                </p>
+            </div>
+
+            <div class="grid grid-2">
+                <!-- Playlist -->
+                <div class="playlist fade-in">
+                    <div class="playlist-header">
+                        <div class="card-subtitle">Playlist Actuelle</div>
+                        <h3 class="card-title">Œuvres Contemporaines</h3>
+                        <p class="card-description">
+                            Exploration du répertoire moderne pour violon solo
+                        </p>
+                    </div>
+                    
+                    <div class="playlist-item active">
+                        <div class="playlist-number">1</div>
+                        <div class="playlist-info">
+                            <div class="playlist-title">Caprice No. 24</div>
+                            <div class="playlist-composer">Paganini</div>
+                        </div>
+                        <div class="playlist-duration">4:32</div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-number">2</div>
+                        <div class="playlist-info">
+                            <div class="playlist-title">Partita No. 2 - Chaconne</div>
+                            <div class="playlist-composer">Bach</div>
+                        </div>
+                        <div class="playlist-duration">15:20</div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-number">3</div>
+                        <div class="playlist-info">
+                            <div class="playlist-title">Méditation de Thaïs</div>
+                            <div class="playlist-composer">Massenet</div>
+                        </div>
+                        <div class="playlist-duration">6:45</div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-number">4</div>
+                        <div class="playlist-info">
+                            <div class="playlist-title">Introduction et Rondo</div>
+                            <div class="playlist-composer">Saint-Saëns</div>
+                        </div>
+                        <div class="playlist-duration">8:15</div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-number">5</div>
+                        <div class="playlist-info">
+                            <div class="playlist-title">Tzigane</div>
+                            <div class="playlist-composer">Ravel</div>
+                        </div>
+                        <div class="playlist-duration">10:30</div>
+                    </div>
+                </div>
+
+                <!-- Additional Audio Players -->
+                <div class="fade-in">
+                    <div class="audio-player mb-lg">
+                        <div class="audio-header">
+                            <div class="audio-artwork">
+                                <i class="fas fa-music" style="color: var(--primary-dark); font-size: var(--text-lg);"></i>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">Concerto en Ré Majeur</div>
+                                <div class="audio-meta">
+                                    <span><i class="fas fa-clock"></i> 12:45</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Victoria Hall</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="time-display">0:00</div>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="time-display">12:45</div>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up" style="color: var(--text-muted); font-size: var(--text-sm);"></i>
+                                <div class="volume-slider">
+                                    <div class="volume-level"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="audio-player">
+                        <div class="audio-header">
+                            <div class="audio-artwork">
+                                <i class="fas fa-microphone" style="color: var(--primary-dark); font-size: var(--text-lg);"></i>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">Session Studio - Improvisations</div>
+                                <div class="audio-meta">
+                                    <span><i class="fas fa-clock"></i> 7:22</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Studio Montreux</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="time-display">0:00</div>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="time-display">7:22</div>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up" style="color: var(--text-muted); font-size: var(--text-sm);"></i>
+                                <div class="volume-slider">
+                                    <div class="volume-level"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos" class="section" data-category="video">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Vidéos & Performances</h2>
+                <p class="section-subtitle">
+                    Concerts, masterclasses et moments privilégiés capturés en vidéo
+                </p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Concert au Victoria Hall">
+                        <div class="video-overlay">
+                            <button class="video-play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-subtitle">Concert Live</div>
+                        <h3 class="card-title">Victoria Hall - Genève</h3>
+                        <p class="card-description">
+                            Performance intégrale du Concerto pour violon de Brahms 
+                            avec l'Orchestre de la Suisse Romande.
+                        </p>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn" title="Regarder sur YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="share-btn" title="Partager">
+                                <i class="fas fa-share"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Masterclass">
+                        <div class="video-overlay">
+                            <button class="video-play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-subtitle">Masterclass</div>
+                        <h3 class="card-title">Technique Avancée</h3>
+                        <p class="card-description">
+                            Masterclass sur l'interprétation des œuvres romantiques 
+                            pour violon, donnée au Conservatoire de Lausanne.
+                        </p>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn" title="Regarder sur Vimeo">
+                                <i class="fab fa-vimeo-v"></i>
+                            </a>
+                            <a href="#" class="share-btn" title="Partager">
+                                <i class="fas fa-share"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Interview">
+                        <div class="video-overlay">
+                            <button class="video-play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-subtitle">Interview</div>
+                        <h3 class="card-title">Portrait d'Artiste</h3>
+                        <p class="card-description">
+                            Entretien exclusif sur le parcours artistique et 
+                            la vision musicale de Jean-David Waeber.
+                        </p>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn" title="Regarder">
+                                <i class="fas fa-play"></i>
+                            </a>
+                            <a href="#" class="share-btn" title="Partager">
+                                <i class="fas fa-share"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Section -->
+    <section id="press" class="section" data-category="press">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Revue de Presse</h2>
+                <p class="section-subtitle">
+                    Les critiques et articles de presse qui témoignent de l'excellence artistique
+                </p>
+            </div>
+
+            <div class="grid grid-auto">
+                <div class="press-article fade-in">
+                    <div class="press-header">
+                        <div class="press-publication">
+                            <div class="press-logo">LT</div>
+                            <div class="press-meta">
+                                <div class="press-source">Le Temps</div>
+                                <div class="press-date">15 Janvier 2024</div>
+                            </div>
+                            <div class="press-category">Critique</div>
+                        </div>
+                    </div>
+                    <div class="press-content">
+                        <h3 class="press-headline">
+                            "Un virtuose au service de l'émotion pure"
+                        </h3>
+                        <p class="press-excerpt">
+                            Jean-David Waeber a offert hier soir au Victoria Hall une interprétation 
+                            magistrale du Concerto de Brahms. Sa technique irréprochable s'efface 
+                            devant une musicalité d'une rare intensité...
+                        </p>
+                        <a href="#" class="press-link">
+                            Lire l'article complet
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-article fade-in">
+                    <div class="press-header">
+                        <div class="press-publication">
+                            <div class="press-logo">24H</div>
+                            <div class="press-meta">
+                                <div class="press-source">24 Heures</div>
+                                <div class="press-date">3 Février 2024</div>
+                            </div>
+                            <div class="press-category">Portrait</div>
+                        </div>
+                    </div>
+                    <div class="press-content">
+                        <h3 class="press-headline">
+                            "La passion du violon transmise aux nouvelles générations"
+                        </h3>
+                        <p class="press-excerpt">
+                            Rencontre avec un artiste passionné qui conjugue excellence 
+                            technique et transmission pédagogique. Portrait d'un musicien 
+                            engagé dans la formation des jeunes talents...
+                        </p>
+                        <a href="#" class="press-link">
+                            Découvrir le portrait
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-article fade-in">
+                    <div class="press-header">
+                        <div class="press-publication">
+                            <div class="press-logo">RTS</div>
+                            <div class="press-meta">
+                                <div class="press-source">RTS Culture</div>
+                                <div class="press-date">20 Mars 2024</div>
+                            </div>
+                            <div class="press-category">Interview</div>
+                        </div>
+                    </div>
+                    <div class="press-content">
+                        <h3 class="press-headline">
+                            "L'art du violon à l'ère du numérique"
+                        </h3>
+                        <p class="press-excerpt">
+                            Comment les nouvelles technologies transforment-elles 
+                            l'apprentissage et la pratique du violon ? Jean-David Waeber 
+                            partage sa vision moderne de l'enseignement musical...
+                        </p>
+                        <a href="#" class="press-link">
+                            Écouter l'interview
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-article fade-in">
+                    <div class="press-header">
+                        <div class="press-publication">
+                            <div class="press-logo">CM</div>
+                            <div class="press-meta">
+                                <div class="press-source">Classique Magazine</div>
+                                <div class="press-date">8 Avril 2024</div>
+                            </div>
+                            <div class="press-category">Actualité</div>
+                        </div>
+                    </div>
+                    <div class="press-content">
+                        <h3 class="press-headline">
+                            "Nouvel album : exploration du répertoire contemporain"
+                        </h3>
+                        <p class="press-excerpt">
+                            Avec son dernier enregistrement "Virtuoso Moderne", 
+                            Jean-David Waeber repousse les frontières du violon classique 
+                            en explorant les compositions du XXIe siècle...
+                        </p>
+                        <a href="#" class="press-link">
+                            Lire la critique
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-article fade-in">
+                    <div class="press-header">
+                        <div class="press-publication">
+                            <div class="press-logo">LAR</div>
+                            <div class="press-meta">
+                                <div class="press-source">L'Agefi Culturel</div>
+                                <div class="press-date">25 Mai 2024</div>
+                            </div>
+                            <div class="press-category">Critique</div>
+                        </div>
+                    </div>
+                    <div class="press-content">
+                        <h3 class="press-headline">
+                            "Récital exceptionnel : technique et émotion"
+                        </h3>
+                        <p class="press-excerpt">
+                            Le récital donné au Conservatoire de Genève a confirmé 
+                            le talent exceptionnel de ce violoniste qui allie 
+                            virtuosité technique et profondeur émotionnelle...
+                        </p>
+                        <a href="#" class="press-link">
+                            Consulter la critique
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-article fade-in">
+                    <div class="press-header">
+                        <div class="press-publication">
+                            <div class="press-logo">JDG</div>
+                            <div class="press-meta">
+                                <div class="press-source">Journal de Genève</div>
+                                <div class="press-date">10 Juin 2024</div>
+                            </div>
+                            <div class="press-category">Événement</div>
+                        </div>
+                    </div>
+                    <div class="press-content">
+                        <h3 class="press-headline">
+                            "Masterclass exceptionnelle au Festival de Verbier"
+                        </h3>
+                        <p class="press-excerpt">
+                            Les participants à la masterclass de Jean-David Waeber 
+                            ont pu bénéficier de conseils précieux d'un artiste 
+                            au sommet de son art. Un moment privilégié...
+                        </p>
+                        <a href="#" class="press-link">
+                            Voir le reportage
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social" class="section" data-category="social">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Réseaux Sociaux</h2>
+                <p class="section-subtitle">
+                    Suivez l'actualité et les moments privilégiés partagés sur les réseaux sociaux
+                </p>
+            </div>
+
+            <div class="social-feed">
+                <div class="social-post fade-in">
+                    <div class="social-header">
+                        <div class="social-platform instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-meta">
+                            <div class="social-author">@jeandavidwaeber</div>
+                            <div class="social-date">Il y a 2 jours</div>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-text">
+                            Moment magique en répétition pour le concert de ce soir au Victoria Hall. 
+                            La musique de Brahms résonne déjà... 🎻✨
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" 
+                             alt="Répétition au Victoria Hall" class="social-image">
+                    </div>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <i class="fas fa-heart"></i>
+                            <span>1,247</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-comment"></i>
+                            <span>89</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-share"></i>
+                            <span>34</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-post fade-in">
+                    <div class="social-header">
+                        <div class="social-platform linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="social-meta">
+                            <div class="social-author">Jean-David Waeber</div>
+                            <div class="social-date">Il y a 5 jours</div>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-text">
+                            Fier d'annoncer ma collaboration avec le Conservatoire de Lausanne 
+                            pour une série de masterclasses dédiées aux jeunes talents. 
+                            L'avenir de la musique classique passe par la transmission ! 🎼
+                        </p>
+                    </div>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>523</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-comment"></i>
+                            <span>67</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-share"></i>
+                            <span>42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-post fade-in">
+                    <div class="social-header">
+                        <div class="social-platform youtube">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="social-meta">
+                            <div class="social-author">Jean-David Waeber</div>
+                            <div class="social-date">Il y a 1 semaine</div>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-text">
+                            Nouvelle vidéo en ligne ! Découvrez les coulisses de l'enregistrement 
+                            de mon dernier album "Virtuoso Moderne". Un voyage au cœur de la création musicale.
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=225&q=80" 
+                             alt="Studio d'enregistrement" class="social-image">
+                    </div>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>2,156</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>12,543</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-share"></i>
+                            <span>187</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-post fade-in">
+                    <div class="social-header">
+                        <div class="social-platform twitter">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="social-meta">
+                            <div class="social-author">@JDWaeber</div>
+                            <div class="social-date">Il y a 3 jours</div>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-text">
+                            "La musique est le langage universel de l'humanité" - Longfellow. 
+                            Chaque concert me le rappelle. Merci au public genevois pour cette 
+                            soirée inoubliable ! 🙏 #MusiqueClassique #Concert
+                        </p>
+                    </div>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <i class="fas fa-heart"></i>
+                            <span>892</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-retweet"></i>
+                            <span>234</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-reply"></i>
+                            <span>56</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-post fade-in">
+                    <div class="social-header">
+                        <div class="social-platform instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-meta">
+                            <div class="social-author">@jeandavidwaeber</div>
+                            <div class="social-date">Il y a 1 semaine</div>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-text">
+                            Préparation intensive pour la tournée européenne. 
+                            Chaque détail compte quand on veut offrir l'excellence ! 🎻🎼
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
+                             alt="Préparation concert" class="social-image">
+                    </div>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <i class="fas fa-heart"></i>
+                            <span>1,834</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-comment"></i>
+                            <span>156</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-share"></i>
+                            <span>78</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-post fade-in">
+                    <div class="social-header">
+                        <div class="social-platform linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="social-meta">
+                            <div class="social-author">Jean-David Waeber</div>
+                            <div class="social-date">Il y a 2 semaines</div>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-text">
+                            Passionnant échange avec les étudiants du Conservatoire lors de ma masterclass. 
+                            Leur curiosité et leur talent me donnent confiance en l'avenir de notre art. 
+                            La relève est assurée ! 🎓🎻
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" 
+                             alt="Masterclass" class="social-image">
+                    </div>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>743</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-comment"></i>
+                            <span>95</span>
+                        </div>
+                        <div class="social-stat">
+                            <i class="fas fa-share"></i>
+                            <span>67</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <div class="card" style="max-width: 600px; margin: 0 auto;">
+                    <div class="card-body">
+                        <div class="card-subtitle">Newsletter</div>
+                        <h3 class="card-title">Restez Connecté</h3>
+                        <p class="card-description mb-lg">
+                            Recevez les dernières actualités, nouveaux enregistrements 
+                            et dates de concert directement dans votre boîte mail.
+                        </p>
+                        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                S'abonner
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fab fa-spotify"></i>
+                                Spotify
+                            </a>
+                            <a href="#" class="btn btn-ghost">
+                                <i class="fab fa-apple"></i>
+                                Apple Music
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Media Page JavaScript Module
+        class MediaManager {
+            constructor() {
+                this.currentAudio = null;
+                this.isPlaying = false;
+                this.currentTime = 0;
+                this.duration = 0;
+                this.volume = 0.7;
+                this.currentFilter = 'all';
+                this.init();
+            }
+
+            init() {
+                this.setupNavigation();
+                this.setupAudioPlayers();
+                this.setupVideoPlayers();
+                this.setupFilters();
+                this.setupAnimations();
+                this.setupCounters();
+                this.setupSocialInteractions();
+            }
+
+            setupNavigation() {
+                // Navbar scroll effect
+                const navbar = document.querySelector('.navbar');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+
+                // Mobile menu toggle
+                const navToggle = document.querySelector('.nav-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                if (navToggle && navMenu) {
+                    navToggle.addEventListener('click', () => {
+                        navMenu.classList.toggle('active');
+                    });
+                }
+
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(anchor.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+
+            setupAudioPlayers() {
+                // Main audio player controls
+                const mainPlayBtn = document.getElementById('main-play-btn');
+                if (mainPlayBtn) {
+                    mainPlayBtn.addEventListener('click', () => {
+                        this.toggleMainPlayer();
+                    });
+                }
+
+                // All play buttons
+                document.querySelectorAll('.play-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.togglePlayer(e.target.closest('.audio-player'));
+                    });
+                });
+
+                // Progress bars
+                document.querySelectorAll('.progress-container').forEach(container => {
+                    container.addEventListener('click', (e) => {
+                        this.setProgress(e, container);
+                    });
+                });
+
+                // Volume controls
+                document.querySelectorAll('.volume-slider').forEach(slider => {
+                    slider.addEventListener('click', (e) => {
+                        this.setVolume(e, slider);
+                    });
+                });
+
+                // Playlist items
+                document.querySelectorAll('.playlist-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        this.selectPlaylistItem(item);
+                    });
+                });
+
+                // Simulate audio progress for demo
+                this.simulateAudioProgress();
+            }
+
+            toggleMainPlayer() {
+                const player = document.querySelector('.audio-player.playing');
+                const playBtn = document.getElementById('main-play-btn');
+                const icon = playBtn.querySelector('i');
+                
+                if (this.isPlaying) {
+                    this.isPlaying = false;
+                    icon.className = 'fas fa-play';
+                    player.classList.remove('playing');
+                } else {
+                    this.isPlaying = true;
+                    icon.className = 'fas fa-pause';
+                    player.classList.add('playing');
+                }
+            }
+
+            togglePlayer(player) {
+                const playBtn = player.querySelector('.play-btn');
+                const icon = playBtn.querySelector('i');
+                
+                if (player.classList.contains('playing')) {
+                    player.classList.remove('playing');
+                    icon.className = 'fas fa-play';
+                } else {
+                    // Stop other players
+                    document.querySelectorAll('.audio-player.playing').forEach(p => {
+                        p.classList.remove('playing');
+                        p.querySelector('.play-btn i').className = 'fas fa-play';
+                    });
+                    
+                    player.classList.add('playing');
+                    icon.className = 'fas fa-pause';
+                }
+            }
+
+            setProgress(e, container) {
+                const rect = container.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                const progressBar = container.querySelector('.progress-bar');
+                progressBar.style.width = (percent * 100) + '%';
+                
+                // Update time display (demo)
+                const player = container.closest('.audio-player');
+                const currentTimeEl = player.querySelector('.time-display');
+                const totalTime = 272; // 4:32 in seconds
+                const currentTime = Math.floor(totalTime * percent);
+                currentTimeEl.textContent = this.formatTime(currentTime);
+            }
+
+            setVolume(e, slider) {
+                const rect = slider.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                const volumeLevel = slider.querySelector('.volume-level');
+                volumeLevel.style.width = (percent * 100) + '%';
+                this.volume = percent;
+            }
+
+            selectPlaylistItem(item) {
+                // Remove active from all items
+                document.querySelectorAll('.playlist-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Add active to clicked item
+                item.classList.add('active');
+                
+                // Update main player info
+                const title = item.querySelector('.playlist-title').textContent;
+                const composer = item.querySelector('.playlist-composer').textContent;
+                const duration = item.querySelector('.playlist-duration').textContent;
+                
+                const mainPlayer = document.querySelector('.audio-player.playing');
+                if (mainPlayer) {
+                    mainPlayer.querySelector('.audio-title').textContent = title;
+                    // Reset progress
+                    mainPlayer.querySelector('.progress-bar').style.width = '0%';
+                    mainPlayer.querySelector('.time-display').textContent = '0:00';
+                }
+            }
+
+            simulateAudioProgress() {
+                setInterval(() => {
+                    const playingPlayers = document.querySelectorAll('.audio-player.playing');
+                    playingPlayers.forEach(player => {
+                        const progressBar = player.querySelector('.progress-bar');
+                        const currentWidth = parseFloat(progressBar.style.width) || 0;
+                        
+                        if (currentWidth < 100) {
+                            progressBar.style.width = (currentWidth + 0.5) + '%';
+                            
+                            // Update time
+                            const timeEl = player.querySelector('.time-display');
+                            const totalTime = 272; // 4:32 in seconds
+                            const currentTime = Math.floor((totalTime * currentWidth) / 100);
+                            timeEl.textContent = this.formatTime(currentTime);
+                        }
+                    });
+                }, 1000);
+            }
+
+            formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            setupVideoPlayers() {
+                document.querySelectorAll('.video-play-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // In a real implementation, this would open a video modal or redirect to YouTube/Vimeo
+                        const videoCard = btn.closest('.video-card');
+                        const title = videoCard.querySelector('.card-title').textContent;
+                        
+                        // Add visual feedback
+                        btn.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            btn.style.transform = 'scale(1)';
+                        }, 150);
+                        
+                        // Show notification (demo)
+                        this.showNotification(`Lecture de : ${title}`);
+                    });
+                });
+
+                // Video thumbnail hover effects
+                document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+                    thumbnail.addEventListener('mouseenter', () => {
+                        const overlay = thumbnail.querySelector('.video-overlay');
+                        overlay.style.opacity = '1';
+                    });
+                    
+                    thumbnail.addEventListener('mouseleave', () => {
+                        const overlay = thumbnail.querySelector('.video-overlay');
+                        overlay.style.opacity = '0';
+                    });
+                });
+            }
+
+            setupFilters() {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const sections = document.querySelectorAll('section[data-category]');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filter = button.dataset.filter;
+                        this.currentFilter = filter;
+
+                        // Update active button
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        // Filter sections
+                        this.filterSections(sections, filter);
+                    });
+                });
+            }
+
+            filterSections(sections, filter) {
+                sections.forEach(section => {
+                    const category = section.dataset.category;
+                    const shouldShow = filter === 'all' || category === filter;
+
+                    if (shouldShow) {
+                        section.style.display = 'block';
+                        setTimeout(() => {
+                            section.style.opacity = '1';
+                            section.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        section.style.opacity = '0';
+                        section.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            section.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+
+            setupAnimations() {
+                // Intersection Observer for fade-in animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all fade-in elements
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    observer.observe(el);
+                });
+
+                // Waveform animation
+                this.animateWaveform();
+            }
+
+            animateWaveform() {
+                const waveformBars = document.querySelectorAll('.waveform-bar');
+                
+                setInterval(() => {
+                    waveformBars.forEach((bar, index) => {
+                        const player = bar.closest('.audio-player');
+                        if (player && player.classList.contains('playing')) {
+                            const randomHeight = Math.random() * 80 + 20;
+                            bar.style.height = randomHeight + '%';
+                        }
+                    });
+                }, 200);
+            }
+
+            setupCounters() {
+                const counters = document.querySelectorAll('.stat-number');
+                
+                const animateCounter = (counter) => {
+                    const target = parseInt(counter.dataset.count);
+                    const duration = 2000; // 2 seconds
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.floor(current);
+                    }, 16);
+                };
+
+                // Trigger counter animation when in view
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.dataset.animated) {
+                            animateCounter(entry.target);
+                            entry.target.dataset.animated = 'true';
+                        }
+                    });
+                });
+
+                counters.forEach(counter => {
+                    counterObserver.observe(counter);
+                });
+            }
+
+            setupSocialInteractions() {
+                // Social post interactions
+                document.querySelectorAll('.social-post').forEach(post => {
+                    post.addEventListener('click', (e) => {
+                        if (!e.target.closest('.social-stats')) {
+                            // Add subtle interaction feedback
+                            post.style.transform = 'translateY(-2px) scale(1.01)';
+                            setTimeout(() => {
+                                post.style.transform = 'translateY(-2px)';
+                            }, 150);
+                        }
+                    });
+                });
+
+                // Social stats interactions
+                document.querySelectorAll('.social-stat').forEach(stat => {
+                    stat.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const icon = stat.querySelector('i');
+                        const count = stat.querySelector('span');
+                        const currentCount = parseInt(count.textContent.replace(',', ''));
+                        
+                        // Animate interaction
+                        icon.style.transform = 'scale(1.2)';
+                        icon.style.color = 'var(--accent-gold)';
+                        count.textContent = (currentCount + 1).toLocaleString();
+                        
+                        setTimeout(() => {
+                            icon.style.transform = 'scale(1)';
+                            icon.style.color = '';
+                        }, 300);
+                    });
+                });
+
+                // Share buttons
+                document.querySelectorAll('.share-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const platform = btn.title || 'Partager';
+                        
+                        // Add visual feedback
+                        btn.style.transform = 'translateY(-4px) scale(1.1)';
+                        setTimeout(() => {
+                            btn.style.transform = '';
+                        }, 200);
+                        
+                        this.showNotification(`${platform} - Lien copié !`);
+                    });
+                });
+
+                // Press article links
+                document.querySelectorAll('.press-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        
+                        // Add loading state
+                        const originalText = link.innerHTML;
+                        link.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Chargement...';
+                        
+                        setTimeout(() => {
+                            link.innerHTML = originalText;
+                            this.showNotification('Article ouvert dans un nouvel onglet');
+                        }, 1000);
+                    });
+                });
+            }
+
+            showNotification(message) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: var(--accent-gold);
+                    color: var(--primary-dark);
+                    padding: var(--space-sm) var(--space-md);
+                    border-radius: var(--radius-lg);
+                    font-weight: 600;
+                    font-size: var(--text-sm);
+                    z-index: 1001;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease;
+                    box-shadow: var(--shadow-lg);
+                `;
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                // Animate in
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+                
+                // Animate out and remove
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize Media Manager when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MediaManager();
+        });
+
+        // Performance optimization: Preload important images
+        const criticalImages = [
+            'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f',
+            'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae',
+            'https://images.unsplash.com/photo-1511379938547-c1f69419868d'
+        ];
+
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src + '?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80';
+        });
+
+        // Service Worker for caching (production enhancement)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').catch(() => {
+                // Silent fail for demo
+            });
+        }
+
+        // Dark mode toggle (bonus feature)
+        const darkModeToggle = () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        };
+
+        // Load saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Space bar to toggle main player
+            if (e.code === 'Space' && !e.target.closest('input, textarea')) {
+                e.preventDefault();
+                const mainPlayBtn = document.getElementById('main-play-btn');
+                if (mainPlayBtn) {
+                    mainPlayBtn.click();
+                }
+            }
+            
+            // Arrow keys for volume control
+            if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+                e.preventDefault();
+                const volumeLevel = document.querySelector('.volume-level');
+                if (volumeLevel) {
+                    const currentWidth = parseFloat(volumeLevel.style.width) || 70;
+                    const newWidth = e.code === 'ArrowUp' 
+                        ? Math.min(100, currentWidth + 5)
+                        : Math.max(0, currentWidth - 5);
+                    volumeLevel.style.width = newWidth + '%';
+                }
+            }
+        });
+
+        // Analytics tracking (demo)
+        const trackEvent = (category, action, label) => {
+            console.log(`Analytics: ${category} - ${action} - ${label}`);
+            // In production, this would send to Google Analytics, Mixpanel, etc.
+        };
+
+        // Track user interactions
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.play-btn')) {
+                trackEvent('Audio', 'Play', 'Button Click');
+            } else if (e.target.closest('.video-play-btn')) {
+                trackEvent('Video', 'Play', 'Button Click');
+            } else if (e.target.closest('.social-stat')) {
+                trackEvent('Social', 'Interaction', 'Like/Share');
+            } else if (e.target.closest('.press-link')) {
+                trackEvent('Press', 'Click', 'Article Link');
+            }
+        });
+    </script>
+</body>
+</html>
