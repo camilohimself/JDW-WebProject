@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensembles - Jean-David Waeber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #000000;
+            --primary-light: #1a1a1a;
+            --secondary-light: #2a2a2a;
+            --accent-primary: #333333;
+            --accent-subtle: #4a4a4a;
+            --accent-gold: #c9a96e;
+            --accent-gold-light: #d4b676;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #b0b0b0;
+            --text-subtle: #909090;
+            --bg-section: #0a0a0a;
+            --bg-card: #151515;
+            --border-subtle: #2a2a2a;
+            --border-light: #3a3a3a;
+            
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-accent: 'Crimson Text', serif;
+            
+            /* Spacing System */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            
+            /* Typography Scale - Amélioré pour l'accessibilité */
+            --text-xs: 0.875rem;     /* 14px - minimum pour l'accessibilité */
+            --text-sm: 1rem;         /* 16px */
+            --text-base: 1.125rem;   /* 18px */
+            --text-lg: 1.25rem;      /* 20px */
+            --text-xl: 1.5rem;       /* 24px */
+            --text-2xl: 1.875rem;    /* 30px */
+            --text-3xl: 2.25rem;     /* 36px */
+            --text-4xl: 3rem;        /* 48px */
+            --text-5xl: 3.75rem;     /* 60px */
+            
+            /* Icon sizes */
+            --icon-sm: 24px;
+            --icon-md: 32px;
+            --icon-lg: 48px;
+            --icon-xl: 64px;
+            
+            /* Line Heights */
+            --leading-tight: 1.25;
+            --leading-snug: 1.375;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.625;
+            
+            /* Letter Spacing */
+            --tracking-tight: -0.025em;
+            --tracking-normal: 0em;
+            --tracking-wide: 0.025em;
+            --tracking-wider: 0.05em;
+            
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
+            --shadow-intense: 0 8px 32px rgba(0, 0, 0, 0.6);
+            
+            --transition-fast: all 0.15s ease-out;
+            --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-section) 100%);
+            color: var(--text-primary);
+            line-height: var(--leading-relaxed);
+            overflow-x: hidden;
+            font-size: var(--text-base);
+            letter-spacing: var(--tracking-normal);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            box-shadow: var(--shadow-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--space-lg);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .logo:hover, .logo:focus {
+            color: var(--accent-gold);
+            transform: scale(1.02);
+            outline: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: var(--space-xs) 0;
+            font-size: var(--text-xs);
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+        }
+
+        .nav-menu a:focus {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        .nav-menu a.active,
+        .nav-menu a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Simplifié */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-2xl) 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23c9a96e;stop-opacity:0.08"/><stop offset="100%" style="stop-color:%23c9a96e;stop-opacity:0.02"/></linearGradient></defs><path d="M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z" fill="url(%23grad1)"/></svg>') center/cover;
+            animation: heroFloat 25s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.01); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            z-index: 2;
+            position: relative;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            color: var(--accent-gold);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            line-height: var(--leading-tight);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .hero-description {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xl);
+            line-height: var(--leading-relaxed);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-metric {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(201, 169, 110, 0.1);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 50px;
+            border: 1px solid var(--accent-gold);
+            margin-bottom: var(--space-xl);
+        }
+
+        .hero-metric-number {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .hero-metric-label {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: var(--space-sm) var(--space-xl);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .hero-cta:hover, .hero-cta:focus {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card);
+            outline: none;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .section {
+            padding: var(--space-2xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            line-height: var(--leading-tight);
+        }
+
+        .section-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Featured Ensemble (Maîtrise) */
+        .featured-section {
+            background: var(--bg-section);
+        }
+
+        .featured-ensemble {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+        }
+
+        .featured-ensemble.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .featured-header {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--secondary-light) 100%);
+            padding: var(--space-xl);
+            text-align: center;
+            position: relative;
+        }
+
+        .featured-icon {
+            font-size: var(--icon-xl);
+            color: var(--accent-gold);
+            margin-bottom: var(--space-md);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 20px;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .featured-name {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .featured-subtitle {
+            color: var(--accent-gold);
+            font-size: var(--text-base);
+            font-style: italic;
+        }
+
+        .featured-content {
+            padding: var(--space-xl);
+        }
+
+        .featured-description {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-lg);
+        }
+
+        .featured-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .featured-stat {
+            text-align: center;
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            font-weight: 500;
+        }
+
+        .featured-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: transparent;
+            color: var(--accent-gold);
+            padding: var(--space-sm) var(--space-md);
+            border: 2px solid var(--accent-gold);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .featured-cta:hover, .featured-cta:focus {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        /* Other Ensembles Grid */
+        .ensembles-section {
+            background: var(--primary-dark);
+        }
+
+        .ensembles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .ensemble-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+            cursor: pointer;
+        }
+
+        .ensemble-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ensemble-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--border-light);
+        }
+
+        .ensemble-header {
+            padding: var(--space-lg);
+            text-align: center;
+            background: linear-gradient(135deg, rgba(42, 42, 42, 0.5) 0%, rgba(51, 51, 51, 0.3) 100%);
+        }
+
+        .ensemble-icon {
+            font-size: var(--icon-lg);
+            color: var(--accent-gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .ensemble-name {
+            font-family: var(--font-serif);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .ensemble-type {
+            color: var(--accent-gold);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: 600;
+        }
+
+        .ensemble-body {
+            padding: var(--space-lg);
+        }
+
+        .ensemble-description {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-md);
+        }
+
+        .ensemble-highlight {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .ensemble-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .ensemble-size {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+
+        .ensemble-arrow {
+            color: var(--accent-gold);
+            transition: var(--transition-fast);
+        }
+
+        .ensemble-card:hover .ensemble-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Audience Section */
+        .audience-section {
+            background: var(--bg-section);
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .audience-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: var(--space-xl);
+            text-align: center;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .audience-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .audience-icon {
+            font-size: var(--icon-lg);
+            color: var(--accent-gold);
+            margin-bottom: var(--space-md);
+        }
+
+        .audience-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .audience-description {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-lg);
+        }
+
+        .audience-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            padding: var(--space-xs) 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .audience-cta:hover, .audience-cta:focus {
+            border-bottom-color: var(--accent-gold);
+            outline: none;
+        }
+
+        /* Modal pour détails */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: var(--space-xl);
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            margin: var(--space-lg);
+            border: 1px solid var(--border-subtle);
+            position: relative;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: var(--text-lg);
+            cursor: pointer;
+            padding: var(--space-xs);
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+
+        .modal-close:hover, .modal-close:focus {
+            color: var(--text-primary);
+            background: var(--border-subtle);
+            outline: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: var(--text-3xl);
+            }
+
+            .featured-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ensembles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 0 var(--space-md);
+            }
+
+            .container {
+                padding: 0 var(--space-md);
+            }
+        }
+
+        /* Focus indicators améliorés */
+        *:focus {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 2px;
+        }
+
+        button:focus,
+        a:focus {
+            outline-offset: 4px;
+        }
+
+        /* Animations améliorées */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading states */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-subtle);
+            border-top: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Jean-David Waeber</a>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#biographie">Biographie</a></li>
+                <li><a href="#repertoire">Répertoire</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#media">Média</a></li>
+                <li><a href="#ensembles" class="active">Ensembles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section Optimisé -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Formations Musicales</p>
+            <h1 class="hero-title">Mes Ensembles</h1>
+            <p class="hero-description">
+                Quatre formations d'excellence qui cultivent la tradition musicale sacrée et forment les musiciens de demain.
+            </p>
+            
+            <div class="hero-metric">
+                <span class="hero-metric-number">4</span>
+                <span class="hero-metric-label">ensembles d'excellence</span>
+            </div>
+            
+            <a href="#featured" class="hero-cta">
+                <span>Découvrir nos formations</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Formation principale (Featured) -->
+    <section id="featured" class="section featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Formation principale</h2>
+                <p class="section-subtitle">La Maîtrise cathédrale, cœur de notre activité musicale</p>
+            </div>
+            
+            <div class="featured-ensemble">
+                <div class="featured-header">
+                    <div class="featured-badge">Principal</div>
+                    <div class="featured-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3 class="featured-name">Maîtrise Cathédrale de Sion</h3>
+                    <p class="featured-subtitle">Ensemble liturgique d'excellence</p>
+                </div>
+                
+                <div class="featured-content">
+                    <p class="featured-description">
+                        Formation phare de la cathédrale de Sion, la Maîtrise incarne l'excellence liturgique et la transmission 
+                        du patrimoine musical sacré. Composée de jeunes chanteurs soigneusement formés, elle assure les principales 
+                        célébrations et développe un répertoire du chant grégorien aux créations contemporaines.
+                    </p>
+                    
+                    <div class="featured-stats">
+                        <div class="featured-stat">
+                            <span class="stat-number">30</span>
+                            <span class="stat-label">choristes</span>
+                        </div>
+                        <div class="featured-stat">
+                            <span class="stat-number">52</span>
+                            <span class="stat-label">liturgies/an</span>
+                        </div>
+                        <div class="featured-stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">concerts/an</span>
+                        </div>
+                        <div class="featured-stat">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">ans d'histoire</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="featured-cta" onclick="openModal('maitrise')">
+                        <span>En savoir plus</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autres ensembles -->
+    <section class="section ensembles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Autres formations</h2>
+                <p class="section-subtitle">Ensembles spécialisés pour différents répertoires et publics</p>
+            </div>
+            
+            <div class="ensembles-grid">
+                <div class="ensemble-card" onclick="openModal('oracantat')">
+                    <div class="ensemble-header">
+                        <div class="ensemble-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="ensemble-name">Chœur Oracantat</h3>
+                        <p class="ensemble-type">Ensemble vocal adulte</p>
+                    </div>
+                    <div class="ensemble-body">
+                        <p class="ensemble-description">
+                            Spécialisé dans <span class="ensemble-highlight">la polyphonie sacrée</span> et le répertoire 
+                            choral classique avec une approche historiquement informée.
+                        </p>
+                        <div class="ensemble-meta">
+                            <span class="ensemble-size">20 choristes expérimentés</span>
+                            <i class="fas fa-arrow-right ensemble-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ensemble-card" onclick="openModal('ecole')">
+                    <div class="ensemble-header">
+                        <div class="ensemble-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="ensemble-name">École Maîtrisienne</h3>
+                        <p class="ensemble-type">Formation jeunesse</p>
+                    </div>
+                    <div class="ensemble-body">
+                        <p class="ensemble-description">
+                            <span class="ensemble-highlight">Conservatoire de la tradition vocale</span> formant 
+                            les jeunes talents dans l'art du chant choral et de la musique sacrée.
+                        </p>
+                        <div class="ensemble-meta">
+                            <span class="ensemble-size">35 élèves, 3 niveaux</span>
+                            <i class="fas fa-arrow-right ensemble-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ensemble-card" onclick="openModal('instrumental')">
+                    <div class="ensemble-header">
+                        <div class="ensemble-icon">
+                            <i class="fas fa-violin"></i>
+                        </div>
+                        <h3 class="ensemble-name">Ensemble Instrumental</h3>
+                        <p class="ensemble-type">Musique de chambre</p>
+                    </div>
+                    <div class="ensemble-body">
+                        <p class="ensemble-description">
+                            Formation spécialisée dans <span class="ensemble-highlight">l'interprétation historique</span> 
+                            baroque et classique avec instruments d'époque.
+                        </p>
+                        <div class="ensemble-meta">
+                            <span class="ensemble-size">10 musiciens, instruments anciens</span>
+                            <i class="fas fa-arrow-right ensemble-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Public cible -->
+    <section class="section audience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Vous souhaitez nous rejoindre ?</h2>
+                <p class="section-subtitle">Découvrez les opportunités adaptées à votre profil</p>
+            </div>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="audience-title">Vous êtes parent ?</h3>
+                    <p class="audience-description">
+                        Offrez à votre enfant une formation musicale d'excellence dans un cadre bienveillant. 
+                        L'École maîtrisienne accueille les jeunes de 6 à 18 ans.
+                    </p>
+                    <a href="#" class="audience-cta">
+                        <span>Inscrire mon enfant</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="audience-title">Vous êtes musicien ?</h3>
+                    <p class="audience-description">
+                        Rejoignez nos ensembles adultes et participez à des projets musicaux passionnants. 
+                        Auditions sur rendez-vous pour évaluer votre niveau.
+                    </p>
+                    <a href="#" class="audience-cta">
+                        <span>Rejoindre un ensemble</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="audience-title">Vous êtes mélomane ?</h3>
+                    <p class="audience-description">
+                        Assistez à nos concerts réguliers et découvrez notre programmation riche, 
+                        des cantates de Bach aux créations contemporaines.
+                    </p>
+                    <a href="#" class="audience-cta">
+                        <span>Voir notre agenda</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modales pour détails -->
+    <div id="modal-maitrise" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); margin-bottom: var(--space-md); color: var(--accent-gold);">
+                Maîtrise Cathédrale de Sion
+            </h3>
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Mission</h4>
+            <p style="margin-bottom: var(--space-md); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                La Maîtrise cathédrale assure la beauté des célébrations liturgiques et forme une nouvelle génération 
+                de musiciens dans la tradition du chant sacré.
+            </p>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Formation</h4>
+            <ul style="margin-bottom: var(--space-md); color: var(--text-secondary); padding-left: var(--space-md);">
+                <li>Technique vocale individuelle et collective</li>
+                <li>Chant grégorien et polyphonie Renaissance</li>
+                <li>Répertoire baroque et classique</li>
+                <li>Formation musicale théorique</li>
+            </ul>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Activités</h4>
+            <ul style="margin-bottom: var(--space-lg); color: var(--text-secondary); padding-left: var(--space-md);">
+                <li>Liturgies dominicales et fêtes majeures</li>
+                <li>Concerts mensuels de cantates de Bach</li>
+                <li>Échanges avec d'autres maîtrises européennes</li>
+                <li>Enregistrements et projets spéciaux</li>
+            </ul>
+            
+            <div style="text-align: center;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: var(--space-xs); background: var(--accent-gold); color: var(--primary-dark); padding: var(--space-sm) var(--space-lg); border-radius: 30px; text-decoration: none; font-weight: 600;">
+                    <span>Nous rejoindre</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-oracantat" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); margin-bottom: var(--space-md); color: var(--accent-gold);">
+                Chœur Oracantat
+            </h3>
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Spécialité</h4>
+            <p style="margin-bottom: var(--space-md); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                Ensemble vocal d'adultes spécialisé dans la polyphonie sacrée et l'interprétation historiquement informée 
+                du répertoire choral européen.
+            </p>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Répertoire</h4>
+            <ul style="margin-bottom: var(--space-md); color: var(--text-secondary); padding-left: var(--space-md);">
+                <li>Polyphonie Renaissance (Palestrina, Victoria, Lasso)</li>
+                <li>Musique baroque (Bach, Händel, Vivaldi)</li>
+                <li>Choral romantique (Brahms, Mendelssohn)</li>
+                <li>Créations contemporaines</li>
+            </ul>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Conditions</h4>
+            <p style="margin-bottom: var(--space-lg); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                Audition requise. Expérience chorale souhaitée. Répétitions hebdomadaires le jeudi soir. 
+                Engagement sur une saison complète.
+            </p>
+            
+            <div style="text-align: center;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: var(--space-xs); background: var(--accent-gold); color: var(--primary-dark); padding: var(--space-sm) var(--space-lg); border-radius: 30px; text-decoration: none; font-weight: 600;">
+                    <span>Auditionner</span>
+                    <i class="fas fa-microphone"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ecole" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); margin-bottom: var(--space-md); color: var(--accent-gold);">
+                École Maîtrisienne
+            </h3>
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Niveaux de formation</h4>
+            <ul style="margin-bottom: var(--space-md); color: var(--text-secondary); padding-left: var(--space-md);">
+                <li><strong>Initiation (6-10 ans)</strong> : Éveil musical et premiers pas du chant</li>
+                <li><strong>Perfectionnement (11-15 ans)</strong> : Technique vocale et répertoire élargi</li>
+                <li><strong>Excellence (16-18 ans)</strong> : Formation pré-professionnelle</li>
+            </ul>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Cursus</h4>
+            <p style="margin-bottom: var(--space-md); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                4 heures de formation hebdomadaire incluant technique vocale, formation musicale, 
+                chant grégorien et polyphonie. Participation aux liturgies selon le niveau.
+            </p>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Avantages</h4>
+            <ul style="margin-bottom: var(--space-lg); color: var(--text-secondary); padding-left: var(--space-md);">
+                <li>Formation musicale complète et gratuite</li>
+                <li>Expérience de la musique sacrée authentique</li>
+                <li>Développement de la discipline et de la confiance</li>
+                <li>Possibilité de poursuivre au conservatoire</li>
+            </ul>
+            
+            <div style="text-align: center;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: var(--space-xs); background: var(--accent-gold); color: var(--primary-dark); padding: var(--space-sm) var(--space-lg); border-radius: 30px; text-decoration: none; font-weight: 600;">
+                    <span>Inscrire mon enfant</span>
+                    <i class="fas fa-user-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-instrumental" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); margin-bottom: var(--space-md); color: var(--accent-gold);">
+                Ensemble Instrumental Baroque
+            </h3>
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Instrumentation</h4>
+            <ul style="margin-bottom: var(--space-md); color: var(--text-secondary); padding-left: var(--space-md);">
+                <li>Violons, alto et violoncelle baroques</li>
+                <li>Contrebasse et instruments à vent d'époque</li>
+                <li>Continuo (clavecin, orgue positif)</li>
+                <li>Instruments selon le répertoire (théorbe, viole de gambe)</li>
+            </ul>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Projets</h4>
+            <p style="margin-bottom: var(--space-md); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                Accompagnement des cantates mensuelles de Bach, concerts de musique de chambre, 
+                enregistrements et collaborations avec d'autres ensembles historiques.
+            </p>
+            
+            <h4 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Philosophie</h4>
+            <p style="margin-bottom: var(--space-lg); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                Interprétation historiquement informée utilisant les techniques, instruments et diapasons d'époque 
+                pour une authenticité maximale du style baroque.
+            </p>
+            
+            <div style="text-align: center;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: var(--space-xs); background: var(--accent-gold); color: var(--primary-dark); padding: var(--space-sm) var(--space-lg); border-radius: 30px; text-decoration: none; font-weight: 600;">
+                    <span>Nous contacter</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation des éléments au scroll
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Délai progressif pour un effet de cascade
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observer tous les éléments à animer
+            const animatedElements = document.querySelectorAll(
+                '.featured-ensemble, .ensemble-card, .audience-card'
+            );
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Animation des compteurs
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number, .hero-metric-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.textContent;
+                        const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
+                        
+                        if (numericValue && numericValue > 0) {
+                            let current = 0;
+                            const increment = numericValue / 40;
+                            const duration = 1500; // 1.5 secondes
+                            const stepTime = duration / 40;
+                            
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= numericValue) {
+                                    target.textContent = finalValue;
+                                    clearInterval(timer);
+                                } else {
+                                    target.textContent = Math.floor(current);
+                                }
+                            }, stepTime);
+                        }
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        // Gestion des modales
+        function openModal(modalId) {
+            const modal = document.getElementById(`modal-${modalId}`);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Focus sur la modale pour l'accessibilité
+                modal.focus();
+                
+                // Fermeture avec Escape
+                document.addEventListener('keydown', handleEscapeKey);
+            }
+        }
+
+        function closeModal() {
+            const activeModal = document.querySelector('.modal.active');
+            if (activeModal) {
+                activeModal.classList.remove('active');
+                document.body.style.overflow = '';
+                document.removeEventListener('keydown', handleEscapeKey);
+            }
+        }
+
+        function handleEscapeKey(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        }
+
+        // Fermeture modale en cliquant en dehors
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                closeModal();
+            }
+        });
+
+        // Parallax subtil pour le hero
+        function initParallax() {
+            let ticking = false;
+            
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.hero-bg');
+                
+                if (parallax && scrolled < window.innerHeight) {
+                    parallax.style.transform = `translateY(${scrolled * 0.2}px)`;
+                }
+                
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            });
+        }
+
+        // Navigation fluide
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Hauteur navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Effet navbar au scroll
+        function initNavbarEffect() {
+            const navbar = document.querySelector('.navbar');
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 50) {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                } else {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+        }
+
+        // Amélioration des interactions hover
+        function enhanceInteractions() {
+            // Cartes d'ensembles
+            const ensembleCards = document.querySelectorAll('.ensemble-card');
+            ensembleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                    this.style.boxShadow = 'var(--shadow-intense)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = 'var(--shadow-card)';
+                });
+            });
+
+            // Boutons CTA avec feedback
+            const ctaButtons = document.querySelectorAll('.hero-cta, .featured-cta, .audience-cta');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Effet de "ripple"
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        }
+
+        // Gestion des erreurs et fallbacks
+        function handleErrors() {
+            window.addEventListener('error', (e) => {
+                console.warn('Erreur capturée:', e.error);
+                // Fallback pour les animations qui échouent
+                document.querySelectorAll('.featured-ensemble, .ensemble-card, .audience-card').forEach(el => {
+                    el.classList.add('visible');
+                });
+            });
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                initScrollAnimations();
+                animateCounters();
+                initParallax();
+                initSmoothScrolling();
+                initNavbarEffect();
+                enhanceInteractions();
+                handleErrors();
+                
+                // Ajout du CSS pour l'effet ripple
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes ripple {
+                        from { transform: scale(0); opacity: 1; }
+                        to { transform: scale(2); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+            } catch (error) {
+                console.warn('Erreur lors de l\'initialisation:', error);
+                // Mode fallback sans animations
+                document.body.classList.add('no-animations');
+            }
+        });
+
+        // Performance: Intersection Observer avec throttling
+        let intersectionTimeout;
+        function throttledIntersection(callback, delay = 100) {
+            return function(...args) {
+                clearTimeout(intersectionTimeout);
+                intersectionTimeout = setTimeout(() => callback.apply(this, args), delay);
+            };
+        }
+    </script>
+</body>
+</html>
